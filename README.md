@@ -2,7 +2,9 @@
 Respitory of the code, 3d files of the robot and some documents for the 2025 WRO Future Engineers competition from T1 REGOČ, Prigorje Brdovečko, Croatia.
 
 About the Robot:
+
 Introduction:
+
 For the “Future Engineers” category, our team was given the challenge of building and programming a robot that could complete two specific tasks: the “Open Challenge” and the “Obstacle Challenge.” However, this was not just about making something that worked—we also had to follow a strict set of rules laid out in the competition guidelines. These rules covered everything from dimensions and sensors to motors and power sources. One of the most important limitations was the rule about the drive system. We couldn’t design our own custom solution from scratch. Instead, we had to choose from a set of approved drive systems listed in the rules document.
 After reviewing the available options and doing research on each of them, we carefully considered which one would be the most efficient and reliable for our tasks. We eventually chose the one that best fit both challenges, and the rest of our design was built around that choice. This document explains the choices we made in terms of mechanical construction, electronics, sensors, and how the robot performs in practice.
 ________________________________________
