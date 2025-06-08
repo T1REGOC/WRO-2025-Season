@@ -20,6 +20,7 @@ For processing and control, we decided to use a microcontroller Arduino Uno and 
 To power everything, we use a 3.7V 1200mAh lithium-ion battery. However, since most of our components require a 5V power supply, we use a step-up voltage regulator (S13V20F5) to convert 3.7V from the battery up to a stable 5V output. This regulator is efficient and powerful enough to handle the load from our system.
 
 ![image](https://github.com/user-attachments/assets/97a3729f-8817-4d37-a062-a4e2b6a05da8)
+
 Bill of materials. 
 
 ________________________________________
