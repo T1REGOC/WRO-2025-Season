@@ -23,6 +23,8 @@ To power everything, we use a 3.7V 1200mAh lithium-ion battery. However, since m
 
 Bill of materials. 
 
+
+
 ________________________________________
 Practical Use of the Robotic Solution
 
