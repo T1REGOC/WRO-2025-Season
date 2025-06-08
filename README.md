@@ -25,3 +25,6 @@ Now let’s talk about how the robot works in real situations. As soon as the st
 When the robot encounters obstacles, it uses the Raspberry Pi Camera to recognize and avoid them.
 For the parallel parking task, the process is broken down into two parts: lining up and parking. First, the robot uses the two side ultrasonic sensors to make sure it is lined up perfectly parallel to the wall. It keeps adjusting until both side sensors give almost the same reading. Once the robot is aligned, it begins a classic parallel parking process, which includes moving backward at an angle, straightening out, and then moving forward to complete the parking.
 
+![image](https://github.com/user-attachments/assets/1c51d363-3c81-4b05-8dcd-12d7d6b6e8db)
+
+
