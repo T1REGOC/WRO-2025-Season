@@ -18,6 +18,10 @@ For processing and control, we decided to utilize both the microcontroller board
 To improve the accuracy of the ultrasonic readings, we added a DHT22 temperature and humidity sensor. The speed of sound can change based on air temperature and humidity, which affects the accuracy of distance readings from ultrasonic sensors. By using the data from the DHT22, we can apply corrections to the ultrasonic sensor calculations, making our readings more reliable under different conditions.
 For processing and control, we decided to use a microcontroller Arduino Uno and a single board computer Raspberry Pi 4. Each of them serves a different role. The Arduino Uno is used for reading sensors that require analog inputs—something the Raspberry Pi doesn’t have. On the other hand, the Raspberry Pi 4 is here because of its processing speed and camera control. Both of these boards operate at 5V.
 To power everything, we use a 3.7V 1200mAh lithium-ion battery. However, since most of our components require a 5V power supply, we use a step-up voltage regulator (S13V20F5) to convert 3.7V from the battery up to a stable 5V output. This regulator is efficient and powerful enough to handle the load from our system.
+
+![image](https://github.com/user-attachments/assets/97a3729f-8817-4d37-a062-a4e2b6a05da8)
+Bill of materials. 
+
 ________________________________________
 Practical Use of the Robotic Solution
 
