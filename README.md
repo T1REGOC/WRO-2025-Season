@@ -27,4 +27,6 @@ For the parallel parking task, the process is broken down into two parts: lining
 
 ![image](https://github.com/user-attachments/assets/1c51d363-3c81-4b05-8dcd-12d7d6b6e8db)
 
+Electrical Scheme
+
 
