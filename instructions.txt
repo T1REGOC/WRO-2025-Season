@@ -1,0 +1,27 @@
+Dht11 ima muski pinout ali zenske zice ne primaju bas tako da to mozemo ili zalemit ili nesto drugo
+Dht je spojen na pin 1 iako se koristi za serial. Zato se u kodu treba samo stavit da se sa dhta cita prije pokretanja seriala(readDHT se mora stavit iznad serial.begin). Kad je kod uploadan onda se moze vratit na pin 0. Cilj je bio da ne koristimo pinove 0, 1 i 13 zato jer su 0 i 1 za serial komunikaciju koju mi koristimo, a pin 13 ima built-in LED koji ima 1k ohma resistor spojen na njega. Nazalost moramo koristiti cak 2 od ta 3 pina, koristimo pin 13 i pin 1 zato jer 0 moze pravit probleme oko seriala i uploadanja koda i svega a pin 1 je tx odnosno samo salje i on moze jedino krive podatke poslat ali s obzirom da nas program koji cita values list ne uzima u obzir informacije ako nije dostupna vrijednost od svih navedenih varijabli. 
+U python skriptama treba se promjenit koje senzore koristimo. Zbog nedostatka samo jednog pina morali smo maket 1 ultrazvucni senzor zato jer njih imamo 6, a sve ostalo imamo samo po jedno. Makeli smo prednji lijevi(distance4 ili po indexu 3).
+Makeli smo njega zato jer smo gledali ovako:
+Prednji nam treba zato jer da nema prednjeg moze se zabit head first u zid
+Zadnji nam treba za parking
+Onda nam ostaju samo oni sa strana, a bitniji su nam zadnji bas zbog parkinga. Posto se u programu prije usporedivalo prosjek sad se usporeduju samo zadnji senzori.
+Objašnjenje:
+Ako imamo sa svake strane dva senzora i uzimamo prosjek od citanja sa neke strane mozemo to zamislit kao da uzimamo udaljenost od sredista stranice robota, a ako mi na jednoj strani imamo samo zadnji on uzima ocitanja sa zadnje strane robota, a ako usporedujemo to sa prosjekom senzora onda bi mi u prevedenom na jednoj strani gledali kolika je udaljenost izmedu zadnjeg senzora i zida, a na drugoj udaljenost izmedu polovice strane robota i zida sto nije isto 
+Duljina linije boje na mapi je na kutu od 90 stupnjeva 5cm. Preko toga se moze dobit delay ako imamo brzinu.
+Delay na arduino programu se moze smanjit ako robot to dozvoljava
+A1 i A2 mogu bit invertirani.
++ i - od ls motor drivera mora biti na power supplyu direktno, a A1 i A2 oviseci koji koristimo za high umjesto high stavljamo pwm
+Open challenge: koristi se samo arduino, a ne i raspberry. On radi tako da u setupu izracuna speed of sound i blue_count i orange_count se postavlja na 0 i u loopu stavlja se motorpower na max i postavlja se smjer motora i onda se pokrece while petlja sa uvjetom dok je blue_count ili orange_count manje od 12. Nakon toga postavljam motorpower na 0. Napomena: kad se while zavrsi onda se loopaju max power i 0
+
+U kodovima se mora promjenit:
+pinout(pise na raspberry u pinout.txt) !!DHT se prebacuje sa 0 na 1
+Provjerit kad se usporeduju udaljenosti(mainly WRO_Logic) moraju se usporedivat samo zadnji, a ne prosjek dvaju senzora
+Raspberry pi GPIO su svi stavljeni na Board number(pin 1 je pin 1), a ne BCM
+Svi trigPinovi od ultrazvucnih su spojeni na isti arduino pin
+values list ide ovako
+values = [distance1, distance2, distance3, distance4, distance5, distance6, way, blue_count, orange_count]
+
+SerialWRO cita serial sa arduina i kreira values list
+WRO_logic radi navigaciju i sve ostalo, na kraju programa pisu funkcije 
+
+od WRO_logica je testiran dio za kameru gdje detektira kako treba vanjske tocke i korektno definira smjer skretanja
